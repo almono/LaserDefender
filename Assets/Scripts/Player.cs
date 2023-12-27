@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
 
         Vector2 newPosition = new Vector2();
         newPosition.x = Mathf.Clamp(transform.position.x + deltaPosition.x, minBounds.x + paddingLeft, maxBounds.x - paddingRight);
-        newPosition.y = Mathf.Clamp(transform.position.y + deltaPosition.y, minBounds.y + paddingBottom, maxBounds.y - paddingBottom);
+        newPosition.y = Mathf.Clamp(transform.position.y + deltaPosition.y, minBounds.y + paddingBottom, maxBounds.y - paddingTop);
 
         transform.position = newPosition;
     }
