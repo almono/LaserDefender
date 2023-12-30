@@ -42,7 +42,6 @@ public class Pathfinder : MonoBehaviour
             }
         } else
         {
-            Debug.Log("DESTROYED");
             // destroy enemy after it reaches last point
             Destroy(gameObject);
         }

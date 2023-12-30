@@ -502,7 +502,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfec8db8302419f4bbec17e409cb41a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentWave: {fileID: 11400000, guid: 8fcc9c49b7bff0f41baf86c1d5399448, type: 2}
+  waveConfigs:
+  - {fileID: 11400000, guid: 8fcc9c49b7bff0f41baf86c1d5399448, type: 2}
+  - {fileID: 11400000, guid: 0eea3b7c08e2a6a48a4b67b5fca403d8, type: 2}
+  - {fileID: 11400000, guid: e4aa588f83f9ea3488a502c556405a52, type: 2}
+  - {fileID: 11400000, guid: cbf0ab0cce2a37d469c854cd5065f894, type: 2}
+  timeBetweenWaves: 2
 --- !u!1001 &3264042165169426470
 PrefabInstance:
   m_ObjectHideFlags: 0
