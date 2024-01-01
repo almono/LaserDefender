@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1064145428662838009}
   - component: {fileID: -3919542518825625642}
   - component: {fileID: -7071362377616355958}
-  m_Layer: 0
+  - component: {fileID: 1919405209230475907}
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,6 +159,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c10dfcb5d79295c42bceb29dc3fecee2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 50
+  maxHealth: 50
+--- !u!114 &1919405209230475907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3371982057671055433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00c828a153ad3274cb37b3d0874e206c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 7113616137481187208, guid: 0f17c850373262f408e35a1b02b92bc9, type: 3}
+  projectileSpeed: 10
+  projectileLifetime: 5
+  firingRate: 0.3
+  useAI: 0
+  isFiring: 0
 --- !u!1 &8497757770727013455
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8981658837624026030}
   - component: {fileID: 4284496159714232427}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShipSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +251,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2875fd922c97126469e02c1791d32c00, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
