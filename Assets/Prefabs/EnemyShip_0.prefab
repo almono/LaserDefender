@@ -210,6 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 50
   maxHealth: 50
+  explosionEffect: {fileID: 7098089251171945446, guid: 01c8e4a192d0b674581b632c5576217b, type: 3}
 --- !u!114 &7713872502140754010
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,4 +241,6 @@ MonoBehaviour:
   projectileLifetime: 5
   firingRate: 1
   useAI: 1
+  firingRateVariance: 0.2
+  minimumFiringRate: 0.2
   isFiring: 0
