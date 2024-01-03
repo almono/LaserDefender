@@ -14,8 +14,14 @@ public class Shooter : MonoBehaviour
     [SerializeField] float minimumFiringRate = 0.2f;
 
     [HideInInspector] public bool isFiring;
+    AudioPlayer audioPlayer;
 
     Coroutine firingCoroutine;
+
+    private void Awake()
+    {
+        audioPlayer = FindObjectOfType<AudioPlayer>();
+    }
 
     void Start()
     {
@@ -60,9 +66,10 @@ public class Shooter : MonoBehaviour
             }
 
             Destroy(projectile, projectileLifetime);
+            audioPlayer.PlayShootingSound();
 
             // if its player then firing rate should be consisten, if enemy then add a bit of randomizer
-            if(useAI)
+            if (useAI)
             {
                 float fireRate = Random.Range(firingRate - firingRateVariance, firingRate + firingRateVariance);
                 fireRate = Mathf.Clamp(fireRate, minimumFiringRate, float.MaxValue);
