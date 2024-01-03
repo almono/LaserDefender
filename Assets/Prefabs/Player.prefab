@@ -162,6 +162,7 @@ MonoBehaviour:
   health: 50
   maxHealth: 50
   explosionEffect: {fileID: 7098089251171945446, guid: 01c8e4a192d0b674581b632c5576217b, type: 3}
+  applyCameraShake: 1
 --- !u!114 &1919405209230475907
 MonoBehaviour:
   m_ObjectHideFlags: 0

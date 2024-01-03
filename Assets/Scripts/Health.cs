@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -8,8 +9,12 @@ public class Health : MonoBehaviour
     [SerializeField] int maxHealth = 50;
     [SerializeField] ParticleSystem explosionEffect;
 
+    [SerializeField] bool applyCameraShake;
+    CameraShake cameraShake;
     private void Awake()
     {
+        cameraShake = Camera.main.GetComponent<CameraShake>();
+
         if(health >  maxHealth)
         {
             health = maxHealth;
@@ -24,6 +29,7 @@ public class Health : MonoBehaviour
         {
             TakeDamage(dmgDealer.GetDamage());
             ShowHitEffect();
+            ShakeCamera();
             dmgDealer.Hit();
         }
     }
@@ -44,6 +50,14 @@ public class Health : MonoBehaviour
         {
             ParticleSystem instance = Instantiate(explosionEffect, transform.position, Quaternion.identity);
             Destroy(instance, instance.main.duration + instance.main.startLifetime.constantMax);
+        }
+    }
+
+    void ShakeCamera()
+    {
+        if(cameraShake != null && applyCameraShake)
+        {
+            cameraShake.Play();
         }
     }
 }
