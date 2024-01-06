@@ -5,13 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    ScoreKeeper scoreKeeper;
-
-    private void Awake()
-    {
-        scoreKeeper = FindObjectOfType<ScoreKeeper>();
-    }
-
     public void LoadMainMenu()
     {
         SceneManager.LoadScene(0);
@@ -19,7 +12,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame()
     {
-        scoreKeeper.ResetScore();
+        ScoreKeeper.instance.ResetScore();
         SceneManager.LoadScene(1);
     }
 

@@ -7,7 +7,7 @@ public class ScoreKeeper : MonoBehaviour
     [SerializeField] int currentScore = 0;
     [SerializeField] UI uiDisplay;
 
-    static ScoreKeeper instance;
+    public static ScoreKeeper instance;
 
     private void Awake()
     {
