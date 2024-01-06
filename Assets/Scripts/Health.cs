@@ -16,12 +16,15 @@ public class Health : MonoBehaviour
     AudioPlayer audioPlayer;
     ScoreKeeper scoreKeeper;
     UI uiDisplay;
+    GameManager gameManager;
 
     private void Awake()
     {
         cameraShake = Camera.main.GetComponent<CameraShake>();
         audioPlayer = FindObjectOfType<AudioPlayer>();
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
+        gameManager = FindObjectOfType<GameManager>();
+
         scoreKeeper.ResetScore();
 
         uiDisplay = FindObjectOfType<UI>();
@@ -66,6 +69,9 @@ public class Health : MonoBehaviour
             {
                 scoreKeeper.AddScore(scoreValue);
                 uiDisplay.UpdateScoreText();
+            } else
+            {
+                gameManager.LoadGameOver();
             }
         }
     }

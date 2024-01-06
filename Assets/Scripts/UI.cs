@@ -35,6 +35,9 @@ public class UI : MonoBehaviour
 
     public void UpdateScoreText()
     {
-        scoreText.text = "Score: " + scoreKeeper.GetScore().ToString("0000000");
+        if(scoreKeeper != null)
+        {
+            scoreText.text = "Score: " + scoreKeeper.GetScore().ToString("0000000");
+        }
     }
 }
