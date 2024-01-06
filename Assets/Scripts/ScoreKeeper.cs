@@ -7,8 +7,11 @@ public class ScoreKeeper : MonoBehaviour
     [SerializeField] int currentScore = 0;
     [SerializeField] UI uiDisplay;
 
+    static ScoreKeeper instance;
+
     private void Awake()
     {
+        ManageSingleton();
         uiDisplay = FindObjectOfType<UI>();
     }
 
@@ -25,5 +28,19 @@ public class ScoreKeeper : MonoBehaviour
     public void ResetScore()
     {
         currentScore = 0;
+    }
+
+    void ManageSingleton()
+    {
+        if (instance != null)
+        {
+            gameObject.SetActive(false);
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this; // 2nd way of creating singleton
+            DontDestroyOnLoad(gameObject);
+        }
     }
 }

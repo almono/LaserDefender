@@ -12,6 +12,19 @@ public class AudioPlayer : MonoBehaviour
     [SerializeField] AudioClip hitSoundClip;
     [SerializeField] [Range(0f, 1f)] float hitVolume = 0.8f;
 
+    static AudioPlayer instance;
+
+    // getter for singleton class so it cant be modified from outside
+    public AudioPlayer getInstance()
+    {
+        return instance;
+    }
+
+    private void Awake()
+    {
+        ManageSingleton();
+    }
+
     public void PlayShootingSound()
     {
         if(shootingClip != null)
@@ -25,6 +38,26 @@ public class AudioPlayer : MonoBehaviour
         if (hitSoundClip != null)
         {
             AudioSource.PlayClipAtPoint(hitSoundClip, Camera.main.transform.position, hitVolume);
+        }
+    }
+    
+    void ManageSingleton()
+    {
+        // get type returns name of current class
+        // first 2 lines is one way of creating singleton
+        //int instanceCount = FindObjectsOfType(GetType()).Length;
+        //if(instanceCount > 1 )
+        if(instance != null)
+        {
+            // we are setting it to false due to execution order
+            // so the order at which it will pick audio player object might be different
+            // at a very small chance which would destroy wrong object
+            gameObject.SetActive(false); 
+            Destroy(gameObject);
+        } else
+        {
+            instance = this; // 2nd way of creating singleton
+            DontDestroyOnLoad(gameObject);
         }
     }
 }

@@ -25,8 +25,6 @@ public class Health : MonoBehaviour
         scoreKeeper = FindObjectOfType<ScoreKeeper>();
         gameManager = FindObjectOfType<GameManager>();
 
-        scoreKeeper.ResetScore();
-
         uiDisplay = FindObjectOfType<UI>();
 
         if(health >  maxHealth)
